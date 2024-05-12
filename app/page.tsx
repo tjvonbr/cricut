@@ -1,3 +1,5 @@
+"use client";
+
 import cn from "classnames";
 import Head from "next/head";
 import Image from "next/image";
@@ -89,11 +91,13 @@ export default function Home() {
           </form>
           <div className="relative flex w-full items-center justify-center">
             <div className="w-full sm:w-[400px] h-[400px] rounded-md shadow-md relative">
-              <img
+              <Image
                 alt={`Dall-E representation of: ${prompt}`}
                 className={cn("rounded-md shadow-md h-full object-cover", {
                   "opacity-100": canShowImage,
                 })}
+                width={100}
+                height={100}
                 // src={image}
                 src={`data:image/png;base64,${image}`}
               />
